@@ -24,9 +24,9 @@ class UserManager{
 		void RegiserUser(){
 			string username,password;
 			cout<<"\t\tEnter User Name : ";
-			cin>>username;
+			getline(cin, username);
 			cout<<"\t\tEnter Password : ";
-			cin>>password;
+			getline(cin, password);
 			
 			User newUser(username,password);
 			users.push_back(newUser);
@@ -82,6 +82,7 @@ main(){
 		cout<<"\t\t6. Exit"<<endl;
 		cout<<"\t\tEnter Your Choice : ";
 		cin>>op;
+		cin.ignore();
 	switch(op){
 		case 1:{
 			usermanage.RegiserUser();
@@ -91,9 +92,9 @@ main(){
 		case 2:{
 			string username,password;
 			cout<<"\t\tEnter User :";
-			cin>>username;
+			getline(cin, username);
 			cout<<"\t\tEnter Password :";
-			cin>>password;
+			getline(cin, password);
 			usermanage.LoginUser(username,password);
 			break;
 		}
@@ -104,14 +105,14 @@ main(){
 		case 4:{
 			string username;
 			cout<<"\t\tEnter User Name :";
-			cin>>username;
+			getline(cin, username);
 			usermanage.searchUser(username);
 			break;
 		}
 		case 5:{
 			string username;
 			cout<<"\t\tEnter User Name :";
-			cin>>username;
+			getline(cin, username);
 			usermanage.deleteUser(username);
 			break;
 		}
